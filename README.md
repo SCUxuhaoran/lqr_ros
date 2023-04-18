@@ -20,3 +20,10 @@ lqr_steering_control.cpp::197 to line 198
 lqr_steering_control.cpp::210 data type "const nav_msgs::Odometry::ConstPtr& odom" to "geometry_msgs::PoseWithCovarianceStamped::ConstPtr& odom"
 as well as header file:
 lqr_node.h::41 "void odomCallback(const nav_msgs::Odometry::ConstPtr& odom)" to "void odomCallback(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr& odom)"
+
+How to setup params:
+Here are some useful settings:
+low_speed:0.3; high_speed:0.5; angular_buff:0.0. 
+low_speed:0.5; high_speed:0.7; angular_buff:0.2. 
+low_speed:0.65; high_speed:0.85; angular_buff:0.4. 
+In slow motion, you don't need angular_buff, which will make turing angle to be too much.
